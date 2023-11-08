@@ -2,12 +2,13 @@
   "name": "message-chat",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://YingCholocate.github.io/messagerchat.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:git":"next build && next export"
+    "ghbuild": "next build && next export"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
