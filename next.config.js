@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = '';
-let basePath = '';
+let basePath = '/';
 
 if (isGithubActions) {
   // 去掉 `<owner>/`
@@ -12,7 +12,6 @@ if (isGithubActions) {
 }
 
 const nextConfig = {
-  output: 'export',
   basePath,
   assetPrefix,
 };
