@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import Input from '../inputs/Input';
 import Modal from '../modals/Modal';
+import UploadImageModal from '../modals/UploadImageModal';
 
 interface SettingsModalProps {
   isOpen?: boolean;
@@ -26,6 +27,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
 }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   console.log(currentUser, '&TEST_CURRENT_USER');
 
@@ -44,8 +46,8 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
 
   const image = watch('image');
 
-  const handleUpload = (result: any) => {
-    setValue('image', result.info.secure_url, {
+  const handleUpload = (filename: any) => {
+    setValue('image', `/tmp/${filename.name}`, {
       shouldValidate: true,
     });
   };
@@ -104,22 +106,26 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 </label>
                 <div className='mt-2 flex items-center gap-x-3'>
                   <Image
-                    width='48'
-                    height='48'
+                    width='50'
+                    height='50'
                     className='rounded-full'
                     src={
                       image || currentUser?.image || '/images/placeholder.jpg'
                     }
                     alt='Avatar'
                   />
-                  <CldUploadButton
-                    options={{ maxFiles: 1 }}
-                    onUpload={handleUpload}
-                    uploadPreset='pgc9ehd5'>
-                    <Button disabled={isLoading} secondary type='button'>
-                      Change
-                    </Button>
-                  </CldUploadButton>
+                  <UploadImageModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    onConfirm={handleUpload}
+                  />
+                  <Button
+                    disabled={isLoading}
+                    secondary
+                    type='button'
+                    onClick={() => setIsModalOpen(true)}>
+                    Change
+                  </Button>
                 </div>
               </div>
             </div>
