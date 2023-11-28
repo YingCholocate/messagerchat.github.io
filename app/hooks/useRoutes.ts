@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import { HiChat } from 'react-icons/hi';
+import { AiFillSetting, AiFillFilePdf } from 'react-icons/ai';
 import { HiArrowLeftOnRectangle, HiUsers } from 'react-icons/hi2';
 import { signOut } from 'next-auth/react';
 import useConversation from './useConversation';
@@ -22,6 +23,18 @@ const useRoutes = () => {
         href: '/users',
         icon: HiUsers,
         active: pathname === '/users',
+      },
+      {
+        label: 'readpdf',
+        href: '/readpdf',
+        icon: AiFillFilePdf,
+        active: pathname === '/readpdf',
+      },
+      {
+        label: 'Settings',
+        href: '/settings',
+        icon: AiFillSetting,
+        active: pathname === '/settings',
       },
       {
         label: 'Logout',
