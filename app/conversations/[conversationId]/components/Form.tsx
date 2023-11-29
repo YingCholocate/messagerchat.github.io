@@ -4,7 +4,6 @@ import { HiPaperAirplane, HiPhoto } from 'react-icons/hi2';
 import MessageInput from './MessageInput';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import axios from 'axios';
-import { CldUploadButton } from 'next-cloudinary';
 import useConversation from '@/app/hooks/useConversation';
 import UploadImageModal from '@/app/components/modals/UploadImageModal';
 import { useState } from 'react';
@@ -75,6 +74,8 @@ const Form = () => {
         gap-2 
         lg:gap-4 
         w-full
+        dark:text-white
+        dark:bg-gray-900
       '>
         <div onClick={() => setIsModalOpen(true)}>
           <HiPhoto size={30} className='text-sky-500' />

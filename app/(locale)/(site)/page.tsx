@@ -14,13 +14,6 @@ const Auth = () => {
         bg-gray-100
       '>
       <div className='sm:mx-auto sm:w-full sm:max-w-md'>
-        {/* <Image
-          height='48'
-          width='48'
-          className='mx-auto w-auto'
-          src='/images/logo.png'
-          alt='Logo'
-        /> */}
         <h2
           className='
             mt-6 

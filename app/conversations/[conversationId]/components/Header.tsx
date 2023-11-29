@@ -53,6 +53,8 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         justify-between 
         items-center 
         shadow-sm
+        dark:bg-gray-900
+        dark:text-gray-100
       '>
         <div className='flex gap-3 items-center'>
           <Link

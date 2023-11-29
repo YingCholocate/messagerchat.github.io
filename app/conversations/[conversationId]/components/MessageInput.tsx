@@ -19,7 +19,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
   register,
 }) => {
   return (
-    <div className='relative w-full'>
+    <div className='relative w-full '>
       <input
         id={id}
         type={type}
@@ -35,6 +35,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
           w-full 
           rounded-full
           focus:outline-none
+         
         '
       />
     </div>

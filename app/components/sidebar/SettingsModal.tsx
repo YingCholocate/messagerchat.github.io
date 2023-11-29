@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { User } from '@prisma/client';
-import { CldUploadButton } from 'next-cloudinary';
 
 import Button from '../Button';
 import Image from 'next/image';
